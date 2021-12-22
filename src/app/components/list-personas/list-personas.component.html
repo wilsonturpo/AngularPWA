@@ -2,10 +2,11 @@
     <div class="card">
         <div class="card-body">
             <span class="h3">Listado de Personas</span>
+            
+            <div class="table-responsive">
 
-            <button class="btn btn-dark btn-lg float-end" routerLink="/create-persona">Agregar</button>
-
-            <table class="table table-striped table-hover mt-5">
+              <button class="btn btn-dark float-end mb-2" routerLink="/create-persona">Agregar</button>
+              <table class="table table-striped table-hover table-bordered mt-5">
                 <thead>
                   <tr>
                     <th scope="col">Nombre</th>
@@ -16,38 +17,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Tomas</td>
-                    <td>Perez</td>
-                    <td>2345</td>
-                    <td>tomas@gmail.com</td>
-                    <td>
-                        <i class="fas fa-edit fa-lg text-info me-2"></i>
-                        <i class="fas fa-trash fa-lg text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tomas</td>
-                    <td>Perez</td>
-                    <td>2345</td>
-                    <td>tomas@gmail.com</td>
-                    <td>
-                        <i class="fas fa-edit fa-lg text-info me-2"></i>
-                        <i class="fas fa-trash fa-lg text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tomas</td>
-                    <td>Perez</td>
-                    <td>2345</td>
-                    <td>tomas@gmail.com</td>
+
+                  <tr *ngFor="let persona of personas">
+                    <td>{{persona.Nombre}}</td>
+                    <td>{{persona.Apellidos}}</td>
+                    <td>{{persona.Documento}}</td>
+                    <td>{{persona.Correo}}</td>
                     <td>
                         <i class="fas fa-edit fa-lg text-info me-2"></i>
                         <i class="fas fa-trash fa-lg text-danger"></i>
                     </td>
                   </tr>
                 </tbody>
-              </table>        
+              </table>       
+            </div>                       
         </div>
     </div>
 </div>
