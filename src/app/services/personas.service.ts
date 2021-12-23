@@ -11,7 +11,7 @@ export class PersonasService {
   constructor(
     private http: HttpClient
   ) {
-    
+
    }
 
    getPersonas(){
@@ -21,6 +21,9 @@ export class PersonasService {
     return this.http.get(this.url, {
       headers: header
     })
+   }
 
+   createPersona(body:any){
+     return this.http.post(this.url, body);
    }
 }
